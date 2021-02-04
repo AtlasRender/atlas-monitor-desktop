@@ -35,9 +35,10 @@ user can do all of this using GUI.
 Andreev Danil | danssg08@gmail.com | https://github.com/DanilAndreev
 ### Team
 * Demchyhsin Andrey | https://github.com/ZaykaNya
-* Nesterov Nikita | https://github.com/Who1sthatdude
+* Halushko Alina | https://github.com/laradoren
+* Volos Dasha | https://github.com/dashaknife
 ### Repository
-You can fin GitHub repository of this project [here](https://github.com/AtlasRender/atlas-monitor)
+You can fin GitHub repository of this project [here](https://github.com/AtlasRender/atlas-monitor-desktop)
 
 <a>
     <hr/>
