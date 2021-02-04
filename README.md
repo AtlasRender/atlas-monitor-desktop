@@ -40,6 +40,7 @@ Andreev Danil | danssg08@gmail.com | https://github.com/DanilAndreev
 ### Repository
 You can fin GitHub repository of this project [here](https://github.com/AtlasRender/atlas-monitor-desktop)
 
+
 <a>
     <hr/>
     <div align="center">
