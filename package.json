@@ -1,7 +1,49 @@
 {
   "name": "atlas-monitor-desktop",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "Atlas Monitor - a part of Pathfinder system, designed to submit jobs, view render reports and control jobs.",
+  "keywords": [
+    "rendering",
+    "manager-system",
+    "manager",
+    "3d-graphics",
+    "visualization",
+    "automation",
+    "monitoring"
+  ],
+  "author": {
+    "name": "Andrieiev Danil",
+    "url": "https://github.com/DanilAndreev",
+    "email": "danssg08@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Andrey Demchyshin",
+      "email": "zaykanya1999@gmail.com",
+      "url": "https://github.com/ZaykaNya"
+    },
+    {
+      "name": "Alina Halushko",
+      "email": "alinahalushko2@gmail.com",
+      "url": "https://github.com/laradoren"
+    },
+    {
+      "name": "Dasha Volos",
+      "email": "tvolos196@gmail.com",
+      "url": "https://github.com/dashaknife"
+    }
+  ],
+  "bugs": {
+    "email": "danssg08@gmail.com",
+    "url": "https://github.com/AtlasRender/atlas-monitor-desktop/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtlasRender/atlas-monitor-desktop.git"
+  },
+  "main": "src/electron-starter.ts",
+  "proxy": "http://api.atlasrender.com:3002",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -20,7 +62,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "electron ."
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +82,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron": "^11.2.2"
   }
 }
