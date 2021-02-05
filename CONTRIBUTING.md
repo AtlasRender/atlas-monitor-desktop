@@ -39,18 +39,28 @@ All rights reserved.
 
 ## Code convention
 
+* Add copyright to the beginning of the file and indicate your authorship. Here is the copyright pattern.
+
+    ```
+    Copyright (c) $today.year. This code created and belongs to Pathfinder render manager project. 
+    Owner and project architect: Danil Andreev | danssg08@gmail.com |  https://github.com/DanilAndreev
+    Project: $project.name
+    File last modified: $file.lastModified
+    All rights reserved.
+    ```
+
 * Keep spacing in the code:
-  - Keep one linebreak spacing between copyright and imports block.
-  - Keep two linebreaks spacing between imports and code blocks.
-  - Keep one linebreak spacing between functions, classes, etc.
-  - Keep one linebreak spacing between logic blocks in code.
-  
+    - Keep one linebreak spacing between copyright and imports block.
+    - Keep two linebreaks spacing between imports and code blocks.
+    - Keep one linebreak spacing between functions, classes, etc.
+    - Keep one linebreak spacing between logic blocks in code.
+
 * Keep code file structure using this order:
-  - Copyright.
-  - Imports.
-  - Other code:
-  - Namespaces and classes.
-  - Functions.
+    - Copyright.
+    - Imports.
+    - Other code:
+    - Namespaces and classes.
+    - Functions.
 
 * In __functions__, __methods__, __classes__, __interfaces__ create ```@author``` tag and fill it with your name.
 * Keep classes structure in this order:
@@ -62,8 +72,8 @@ All rights reserved.
   > Namespaces, declarations and interfaces have to be higher in code than realisation.
 
 * Use CamelStyle in your code. Components, interfaces started with capital letter. Functions, variables started with
-   lower letter. Name variables, functions and everything that you write as intuitively as possible so that there is
-   no confusion and misunderstanding.
+  lower letter. Name variables, functions and everything that you write as intuitively as possible so that there is no
+  confusion and misunderstanding.
 
     ```typescript
     interface Interface {
@@ -80,7 +90,7 @@ All rights reserved.
 
 * Place ```Options``` interfaces into a __holder namespace__.
     ```typescript
-    namespace Foo {
+    declare namespace Foo {
         /**
          * Options - interface for Foo options.
          * @interface
@@ -133,7 +143,9 @@ All rights reserved.
     ```
 
 * Components must use ```React.forwardRef()```.
-* All functions, interfaces and components must have JSDocs. Description in JSDocs must contain a detailed description, type decorators, for example, @function or @interface. Also write authorship after the @author decorator. We encourage writing examples after the @example decorator.
+* All functions, interfaces and components must have JSDocs. Description in JSDocs must contain a detailed description,
+  type decorators, for example, @function or @interface. Also write authorship after the @author decorator. We encourage
+  writing examples after the @example decorator.
 
     ```typescript
     /**
@@ -162,10 +174,10 @@ All rights reserved.
     }
     ```
 
-* To import styles into your components use HOC ```withStyles```.
+* To apply styles to components use HOC ```withStyles```.
 
     ```typescript
-    export default withStyles(styles)(Component);
+    withStyles(styles)(YourComponent);
     ```
 
 * Use double-quoted strings.
@@ -181,7 +193,7 @@ All rights reserved.
 
 * If you have lots of props in a component field write each prop from new line.
 
-    ```typescript
+    ```tsx
     return(
         <Component
             color="white"
@@ -195,94 +207,120 @@ All rights reserved.
 
     ```typescript
     Component.displayName = "Component";
-    Component.propTypes = {};
+    Component.propTypes = {
+        text: PropTypes.string
+    };
     ```
 
-* Add copyright to the beginning of the file and indicate your authorship. Here is the copyright pattern.
-
-    ```
-    Copyright (c) $today.year. This code created and belongs to Pathfinder render manager project. 
-    Owner and project architect: Danil Andreev | danssg08@gmail.com |  https://github.com/DanilAndreev
-    Project: $project.name
-    File last modified: $file.lastModified
-    All rights reserved.
-    ```
-
-* Component example.
-
-    ```typescript jsx
-    import React, {useEffect, useState} from "react";
-    import {Box, Button, Typography, withStyles} from "@material-ui/core";
-    import styles from "./styles";
-    import Stylable from "./Stylable";
-    
-    /**
-     * ComponentProps - interface for Component component.
-     * @interface
-     * @author Andrii Demchyshyn
-     */
-    interface ComponentProps extends Stylable {
-        /**
-         * text - component name.
-         */
-        text: string;
-    }
-    
-    /**
-     * Component - component that display field with text.
-     * @function
-     * @author Andrii Demchyshyn
-     */
-    const Component = React.forwardRef((props: ComponentProps, ref: React.Ref<any>) => {
-        const {
-            classes,
-            className,
-            text,
-        } = props;
-    
-    
-        const [number, setNumber] = useState<number>(0);
-    
-    
-        useEffect(() => {
-            if (number > 10) {
-                setNumber(0);
-            }
-        }, [number]);
-    
-    
-        /**
-         * handleIncreaseNumber - function increases number by 1.
-         * @function
-         * @author Andrii Demchyshyn
-         */
-        function handleIncreaseNumber(): void {
-            setNumber(number + 1);
-        }
-    
-    
-        return (
-            <Box className={classes.root}>
-                <Typography>
-                    {text}
-                </Typography>
-                <Typography>
-                    Button clicked {number} times
-                </Typography>
-                <Button
-                    onClick={handleIncreaseNumber}
-                >
-                    Click
-                </Button>
-            </Box>
-        );
-    });
-    Component.displayName = "Component";
-    Component.propTypes = {};
-    
-    export default withStyles(styles)(Component);
-    ```
-
+* Component example:
+    - Every component must have namespace with Props, Classes and other interfaces that belongs to this component.
+    - Variable that uses ```React.forwardRef()``` must have name ```Comp```.
+    - After ```Comp``` create variable with a component name, then assign ```withStyles()``` and other HOCs.
+  
+  ```tsx
+  import React, {useEffect, useState} from "react";
+  import {Box, Button, Typography, withStyles} from "@material-ui/core";
+  import styles from "./styles";
+  import PropTypes from "prop-types";
+  import Stylable from "../Stylable";
+  
+  
+  /**
+   * TestComponent - namespace for TestComponent component.
+   * @namespace
+   * @author Andrii Demchyshyn
+   */
+  declare namespace TestComponent {
+      /**
+       * Props - interface for TestComponent component.
+       * @interface
+       * @author Andrii Demchyshyn
+       */
+      export interface Props extends Stylable<Classes> {
+          /**
+           * text - component name.
+           */
+          text: string;
+      }
+  
+      /**
+       * Classes - interface for TestComponent styles.
+       * @interface
+       * @author Andrii Demchyshyn
+       */
+      export interface Classes {
+          /**
+           * root - styles applied to the root component
+           */
+          root?: string;
+          /**
+           * title - styles applied to the title component
+           */
+          title?: string;
+          /**
+           * button - styles applied to the button component
+           */
+          button?: string;
+      }
+  }
+  
+  /**
+   * TestComponent - component that display field with text.
+   * @function
+   * @author Andrii Demchyshyn
+   */
+  const Comp = React.forwardRef((props: TestComponent.Props, ref: React.Ref<HTMLSpanElement>) => {
+      const {
+          text,
+          classes,
+          className,
+      } = props;
+  
+      const [number, setNumber] = useState<number>(0);
+  
+      useEffect(() => {
+          if (number > 10) {
+              setNumber(0);
+          }
+      }, [number]);
+  
+      /**
+       * handleIncreaseNumber - function increases number by 1.
+       * @function
+       * @author Andrii Demchyshyn
+       */
+      function handleIncreaseNumber(): void {
+          setNumber(number + 1);
+      }
+  
+      return (
+          <Box>
+              <Typography ref={ref} className={classes?.root}>
+                  {text}
+              </Typography>
+              <Typography className={classes?.title}>
+                  Button clicked {number} times
+              </Typography>
+              <Button
+                  className={classes?.button}
+                  onClick={handleIncreaseNumber}
+              >
+                  Click
+              </Button>
+          </Box>
+      );
+  });
+  
+  Comp.displayName = "TestComponent";
+  
+  Comp.propTypes = {
+      text: PropTypes.string.isRequired
+  };
+  
+  const TestComponent = withStyles(styles)(Comp);
+  
+  export default TestComponent;
+  ```
 
 ## Contacts
 
