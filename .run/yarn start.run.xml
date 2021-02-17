@@ -1,0 +1,20 @@
+<!--
+  ~ Copyright (c) 2021. This code created and belongs to Atlas render manager project.
+  ~ Owner and project architect: Danil Andreev | danssg08@gmail.com |  https://github.com/DanilAndreev
+  ~ Project: atlas-monitor-desktop
+  ~ File last modified: 17.02.2021, 20:41
+  ~ All rights reserved.
+  -->
+
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="yarn start" type="js.build_tools.npm">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts>
+      <script value="start" />
+    </scripts>
+    <node-interpreter value="project" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>
