@@ -1,7 +1,8 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Fast Refresh for rapid application development",
+  "name": "atlas-monitor-desktop",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Atlas Monitor - a part of Pathfinder system, designed to submit jobs, view render reports and control jobs.",
   "scripts": {
     "build": "concurrently \"yarn build:main\" \"yarn build:renderer\"",
     "build:main": "cross-env NODE_ENV=production webpack --config ./.erb/configs/webpack.config.main.prod.babel.js",
@@ -78,41 +79,44 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "https://github.com/AtlasRender/atlas-monitor-desktop.git"
   },
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "Andrieiev Danil",
+    "url": "https://github.com/DanilAndreev",
+    "email": "danssg08@gmail.com"
   },
   "contributors": [
     {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
+      "name": "Andrey Demchyshin",
+      "email": "zaykanya1999@gmail.com",
+      "url": "https://github.com/ZaykaNya"
     },
     {
-      "name": "John Tran",
-      "email": "jptran318@gmail.com",
-      "url": "https://github.com/jooohhn"
+      "name": "Alina Halushko",
+      "email": "alinahalushko2@gmail.com",
+      "url": "https://github.com/laradoren"
+    },
+    {
+      "name": "Dasha Volos",
+      "email": "tvolos196@gmail.com",
+      "url": "https://github.com/dashaknife"
     }
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "email": "danssg08@gmail.com",
+    "url": "https://github.com/AtlasRender/atlas-monitor-desktop/issues"
   },
   "keywords": [
-    "electron",
-    "boilerplate",
-    "react",
-    "typescript",
-    "ts",
-    "sass",
-    "webpack",
-    "hot",
-    "reload"
+    "rendering",
+    "manager-system",
+    "manager",
+    "3d-graphics",
+    "visualization",
+    "automation",
+    "monitoring"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {
@@ -234,6 +238,7 @@
     "yarn-deduplicate": "^3.1.0"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "electron-debug": "^3.1.0",
     "electron-log": "^4.2.4",
     "electron-redux": "^1.5.4",
