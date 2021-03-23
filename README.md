@@ -30,8 +30,8 @@ Atlas Monitor is a part of Atlas Render Manager, which allow user:
 * to control render jobs
 * to manipulate tasks
 * to set up users and organization
-* to manage plugins  
-* etc  
+* to manage plugins
+* etc
 
 user can do all of this using GUI.
 ## Credits
